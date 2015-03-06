@@ -1,0 +1,25 @@
+en:
+  _SAVING: "Saving..."
+  _BTN_ADD_IMAGES: Add Images
+  rhinoart_gallery:
+    _GALLERY: Gallery
+    _GALLERIES: Galleries
+
+    _NEW_GALLERY: New Gallery
+
+    _GALLERY_SUCCESSFULLY_CREATED: Image was successfully created.
+    _GALLERY_SUCCESSFULLY_UPDATED: Image was successfully updated.
+    _GALLERY_SUCCESSFULLY_DELITED: "Галлерея \"%{name}\" успешно удалена."
+
+    _IMAGE_SUCCESSFULLY_CREATED: Image was successfully created.
+    _IMAGE_SUCCESSFULLY_UPDATED: Image was successfully updated.
+    _IMAGE_SUCCESSFULLY_DELITED: "Image \"%{name}\" was successfully destroyed"
+
+    _GALLERY_LOADING_IMAGES: Loading images
+
+    _GALLERY_NAME: Name
+    _GALLERY_SLUG: Slug
+    _GALLERY_IMAGE: Image
+    _GALLERY_DESCRIPTION: Description
+    _GALLERY_ACTIVE: Active
+    _GALLERY_IMAGES_COUNT: Images Count

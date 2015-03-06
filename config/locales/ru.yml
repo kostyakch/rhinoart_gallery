@@ -1,0 +1,25 @@
+ru:
+  _SAVING: "Сохранение..."
+  _BTN_ADD_IMAGES: Добавить изображения
+  rhinoart_gallery:
+    _GALLERY: Галерея
+    _GALLERIES: Галереи
+
+    _NEW_GALLERY: Новая галерея
+
+    _GALLERY_SUCCESSFULLY_CREATED: Галлерея успешно создана.
+    _GALLERY_SUCCESSFULLY_UPDATED: Галлерея успешно обновлена.
+    _GALLERY_SUCCESSFULLY_DELITED: "Галлерея \"%{name}\" успешно удалена."
+
+    _IMAGE_SUCCESSFULLY_CREATED: Изображение успешно создано.
+    _IMAGE_SUCCESSFULLY_UPDATED: Изображение успешно обновлено.
+    _IMAGE_SUCCESSFULLY_DELITED: "Изображение \"%{name}\" успешно удалено."
+
+    _GALLERY_LOADING_IMAGES: Загрузка изображений
+
+    _GALLERY_NAME: Имя
+    _GALLERY_SLUG: Алиас
+    _GALLERY_IMAGE: Изображение
+    _GALLERY_DESCRIPTION: Описание
+    _GALLERY_ACTIVE: Активна
+    _GALLERY_IMAGES_COUNT: Кол-во изображений

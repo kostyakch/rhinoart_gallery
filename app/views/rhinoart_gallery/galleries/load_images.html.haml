@@ -1,0 +1,13 @@
+- append_javascript 'rhinoart_gallery/images_uploader'
+- append_stylesheet 'rhinoart_gallery/application'
+
+.row
+  .span8.offset1
+    %h1= "#{t('rhinoart_gallery._GALLERY_LOADING_IMAGES')}: #{@gallery.name}"
+    #uploader
+    .form-actions
+      .btn-overlay
+        %a.btn.btn-primary(href=galleries_path)= t(:_BACK)
+
+:javascript
+  window.gallery_images_path = '#{gallery_images_path(@gallery)}';
