@@ -20,9 +20,17 @@ module RhinoartGallery
         icon: 'fa-icon-picture',
         link: proc{ rhinoart_gallery.galleries_path },
         label: 'rhinoart_gallery._GALLERY',
+        allowed: proc{ can?(:manage, :gallery) },
         notification: ->{ RhinoartGallery::Gallery.count }
       })
 
+      Rhinoart::Menu::MainMenu.add_item({
+        icon: 'fa-icon-picture',
+        link: proc{ rhinoart_gallery.galleries_path },
+        label: 'rhinoart_gallery._GALLERY',
+        allowed: proc{ can?(:manage, :gallery) },
+        active: proc{ controller_name == 'galleries' }
+      })
     end
 
   end
