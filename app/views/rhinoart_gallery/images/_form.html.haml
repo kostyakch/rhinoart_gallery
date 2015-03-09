@@ -1,36 +1,46 @@
 = form_for(@image, url: gallery_image_path(@image.gallery, @image)) do |f|
   .form-horizontal
-    = render partial: 'rhinoart_gallery/errors', locals: {errors: @image.errors}
-    //Name
-    .form-group
-      .col-sm-2.control-label
-        = f.label :name, 'Name *'
-      .col-sm-8
-        = f.text_field :name, :class => 'form-control content_title'
+    = render 'rhinoart/shared/error_messages', object: f.object
+    = hidden_field_tag :redirect_to, params[:redirect_to] if params[:redirect_to].present?
 
-    //Slug
-    .form-group
-      .col-sm-2.control-label
-        = f.label :alt, 'Alt'
-      .col-sm-8
-        = f.text_field :alt, :class => 'form-control'
-    //Description
-    .form-group
-      .col-sm-2.control-label
-        = f.label :description, 'Description'
-      .col-sm-8.browse
-        = text_area_tag 'image[description]', f.object.description, :class => 'form-control'
-    //Notice
-    .form-group
-      .col-sm-offset-2.col-sm-8
-        %em.small * - required fields
+    .control-group
+      = f.label :name, t('rhinoart_gallery._IMAGE_NAME'), class: 'control-label'
+      .controls
+        = f.text_field :name, required: true
 
-    //Submit
-    .actions.form-group
-      .col-sm-offset-2.col-sm-10
-        %button#submit.btn.btn-success
-          %i.glyphicon.glyphicon-ok-sign
-          %span Save
-        %a.btn.btn-primary(href="#{gallery_image_path(@image.gallery, @image)}")
-          %i.glyphicon.glyphicon-arrow-left
-          %span Back
+    .control-group
+      = f.label :alt, t('rhinoart_gallery._IMAGE_ALT'), class: 'control-label'
+      .controls
+        = f.text_field :alt
+
+    .control-group
+      = f.label :gallery, t('rhinoart_gallery._IMAGE_GALLERY'), class: 'control-label'
+      .controls
+        = f.collection_select :gallery_id, RhinoartGallery::Gallery.all, :id, :name
+
+    .control-group
+      = f.label :image, t('rhinoart_gallery._GALLERY_IMAGE'), class: 'control-label'
+      .controls
+        = f.file_field :image
+        = f.hidden_field :image_cache
+        %div
+          = image_tag @image.image.thumb.url
+
+    .control-group
+      = f.label :description, t('rhinoart_gallery._IMAGE_DESCRIPTION'), class: 'control-label'
+      .controls
+        = f.text_area :description
+
+    .control-group
+      = f.label :position, t('rhinoart_gallery._IMAGE_POSITION'), class: 'control-label'
+      .controls
+        = f.number_field :position
+
+    .control-group
+      = f.label :active, t('rhinoart_gallery._IMAGE_ACTIVE'), class: 'control-label'
+      .controls
+        = f.check_box :active
+
+    .form-actions
+      = f.submit t(:_BTN_SAVE), class: 'btn btn-primary', data: { disable_with: t(:_SAVING) }
+      = link_to t(:_BACK), @image.gallery, :class => 'btn btn-success'

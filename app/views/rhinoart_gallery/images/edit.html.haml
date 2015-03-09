@@ -1,3 +1,6 @@
-%h1 Editing image
+- provide(:title, "#{t(:_EDIT)}: #{@image.name}" )
 
-= render 'form'
+.offset1
+  %h1.offset-bottom1= "#{t(:_EDIT)}: #{@image.name}"
+
+  = render 'form'

@@ -22,4 +22,13 @@ en:
     _GALLERY_IMAGE: Image
     _GALLERY_DESCRIPTION: Description
     _GALLERY_ACTIVE: Active
+    _GALLERY_POSITION: Position
     _GALLERY_IMAGES_COUNT: Images Count
+
+    _IMAGE_NAME: Name
+    _IMAGE_ALT: Alt
+    _IMAGE_GALLERY: Gallery
+    _IMAGE_IMAGE: File
+    _IMAGE_DESCRIPTION: Description
+    _IMAGE_POSITION: Position
+    _IMAGE_ACTIVE: Active

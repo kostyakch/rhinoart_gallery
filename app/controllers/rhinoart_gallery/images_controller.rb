@@ -31,7 +31,7 @@ module RhinoartGallery
     # PATCH/PUT /images/1
     def update
       if @image.update(image_params)
-        redirect_to gallery_image_path(@image.gallery, @image), notice: t('rhinoart_gallery._IMAGE_SUCCESSFULLY_UPDATED')
+        redirect_to gallery_path(@image.gallery), notice: t('rhinoart_gallery._IMAGE_SUCCESSFULLY_UPDATED')
       else
         render :edit
       end

@@ -22,4 +22,13 @@ ru:
     _GALLERY_IMAGE: Изображение
     _GALLERY_DESCRIPTION: Описание
     _GALLERY_ACTIVE: Активна
+    _GALLERY_POSITION: Позиция
     _GALLERY_IMAGES_COUNT: Кол-во изображений
+
+    _IMAGE_NAME: Имя
+    _IMAGE_ALT: Alt
+    _IMAGE_GALLERY: Галерея
+    _IMAGE_IMAGE: Файл
+    _IMAGE_DESCRIPTION: Описание
+    _IMAGE_POSITION: Позиция
+    _IMAGE_ACTIVE: Активно

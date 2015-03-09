@@ -15,6 +15,7 @@
     %table.table.table-striped
       %thead
         %tr
+          %th
           %th=t('rhinoart_gallery._GALLERY_NAME')
           %th=t('rhinoart_gallery._GALLERY_SLUG')
           %th=t('rhinoart_gallery._GALLERY_IMAGES_COUNT')
@@ -22,6 +23,11 @@
       %tbody
         - @galleries.each do |gallery|
           %tr
+            %td
+              - if !gallery.last?
+                %a.icon-arrow-down(href="#{move_down_gallery_path(gallery)}")
+              - if !gallery.first?
+                %a.icon-arrow-up(href="#{move_up_gallery_path(gallery)}")
             %td
               %span= link_to gallery.name, gallery
             %td=gallery.slug
@@ -35,8 +41,3 @@
                   %li= link_to(t(:_BTN_DELETE), gallery, {:method => :delete, 'data-confirm' => 'Are you sure?'})
                   %li= link_to(t(:_BTN_EDIT), edit_gallery_path(gallery))
                   %li= link_to(t(:_BTN_ADD_IMAGES), load_images_gallery_path(gallery))
-
-
-    -#.row-fluid
-    -#  .span12.center
-    -#    .dataTables_paginate.paging_bootstrap.pagination= will_paginate page_items

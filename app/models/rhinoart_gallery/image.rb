@@ -3,6 +3,7 @@ module RhinoartGallery
     mount_uploader :image, RhinoartGallery::ImageUploader
 
     acts_as_list scope: :gallery_id
+    has_paper_trail
 
     default_scope { order 'position' }
 

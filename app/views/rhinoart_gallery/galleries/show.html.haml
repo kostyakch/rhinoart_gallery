@@ -1,30 +1,22 @@
 - provide(:title, "#{t('rhinoart_gallery._GALLERY')}: #{@gallery.name}" )
 
-.row
-  .span8.offset1
-    %h1= "#{t('rhinoart_gallery._GALLERY')}: #{@gallery.name}"
 
-    .row.show-grid
-      .col-md-2
-        %strong Slug
-      .col-md-4=@gallery.slug
-
-    .row.show-grid
-      .col-md-2
-        %strong Image
-      .col-md-6
-        %a(href="#{@gallery.image.url}" target='_blank')
-          = image_tag @gallery.image.thumb.url
-    - if @gallery.description.present?
-      .row.show-grid
-        .col-md-2
-          %strong Descripions
-        .col-md-6= @gallery.description
-    .row.show-grid
-      .col-md-2
-        %strong Images:
-    .row.show-grid
-      - @gallery.images.each do |image|
-        .col-md-3.text-center
-          %a(href="#{gallery_image_path(@gallery, image)}")
-            = image_tag image.image.thumb.url
+.span8.offset1
+  .row.show-grid.offset-bottom1
+    .span3
+      = image_tag @gallery.image.thumb.url
+    .span9
+      %h1= @gallery.name
+      %span= @gallery.description
+  .row.show-grid
+    .span2
+      %strong Images:
+  .row.show-grid.offset-bottom1
+    - @gallery.images.each do |image|
+      .span3.text-center
+        %a(href="#{edit_gallery_image_path(@gallery, image)}")
+          = image_tag image.image.thumb.url
+  .form-actions
+    = link_to(t(:_BTN_DELETE), @gallery, {:method => :delete, 'data-confirm' => 'Are you sure?', :class => 'btn btn-warning'})
+    = link_to(t(:_BTN_EDIT), edit_gallery_path(@gallery), :class => 'btn btn-primary')
+    = link_to(t(:_BTN_ADD_IMAGES), load_images_gallery_path(@gallery), :class => 'btn btn-success')

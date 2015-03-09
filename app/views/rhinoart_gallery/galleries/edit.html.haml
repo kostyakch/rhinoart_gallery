@@ -1,6 +1,5 @@
 - provide(:title, "#{t(:_EDIT)}: #{@gallery.name}" )
 
-.row
-  .span8.offset1
-    %h1= "#{t(:_EDIT)}: #{@gallery.name}"
-    = render 'form'
+.offset1
+  %h1= "#{t(:_EDIT)}: #{@gallery.name}"
+  = render 'form'

@@ -6,6 +6,7 @@ module RhinoartGallery
     friendly_id :slug, use: [:slugged, :finders]
 
     acts_as_list
+    has_paper_trail
 
     default_scope { order 'position' }
 

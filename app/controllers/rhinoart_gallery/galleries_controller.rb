@@ -1,7 +1,7 @@
 require_dependency "rhinoart_gallery/application_controller"
 module RhinoartGallery
   class GalleriesController < ApplicationController
-    before_action :set_gallery, only: [:show, :edit, :update, :destroy, :load_images]
+    before_action :set_gallery, only: [:show, :edit, :update, :destroy, :load_images, :move_up, :move_down]
 
     # GET /galleries
     def index
@@ -10,6 +10,16 @@ module RhinoartGallery
 
     # GET /galleries/1
     def show
+    end
+
+    def move_up
+      @gallery.move_higher
+      redirect_to galleries_path
+    end
+
+    def move_down
+      @gallery.move_lower
+      redirect_to galleries_path
     end
 
     # GET /galleries/new
