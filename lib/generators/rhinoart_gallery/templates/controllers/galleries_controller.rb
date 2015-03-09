@@ -1,12 +1,12 @@
 class GalleriesController < ApplicationController
 
   def index
-    @galleries = ShrGallery::Gallery.all
+    @galleries = RhinoartGallery::Gallery.all
   end
 
   # GET /galleries/slug
   def show
-    @gallery = ShrGallery::Gallery.find(params[:id])
+    @gallery = RhinoartGallery::Gallery.find(params[:id])
   end
 
 end
